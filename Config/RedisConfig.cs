@@ -1,0 +1,7 @@
+namespace GcpMessagingDemo.Config;
+
+public class RedisConfig
+{
+    public string Host { get; set; } = "localhost";
+    public int Port { get; set; } = 6379;
+}

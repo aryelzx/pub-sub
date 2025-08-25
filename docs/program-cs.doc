@@ -1,0 +1,25 @@
+Host.CreateDefaultBuilder → cria o host genérico do .NET, que já sabe lidar com:
+
+logs
+
+config (appsettings.json, env vars…)
+
+DI (injeção de dependência)
+
+ConfigureAppConfiguration → registra de onde as configs virão (appsettings.json neste caso).
+
+ConfigureServices → registra todos os serviços que vamos usar.
+
+services.Configure<RedisConfig>(...) → pega a seção "Redis" do appsettings.json e converte para um objeto RedisConfig.
+
+AddSingleton<...> → diz ao .NET para criar 1 instância única do serviço durante toda a vida da aplicação.
+
+host.Services.GetRequiredService<...> → pede para o container de DI nos dar a instância configurada.
+
+O fluxo final é:
+
+publicamos uma mensagem
+
+o subscriber escuta
+
+salva/cacheia no Redis

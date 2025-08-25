@@ -1,0 +1,30 @@
+GcpMessagingDemo/
+│
+├── GcpMessagingDemo/               # Projeto principal (.csproj)
+│   ├── Program.cs                  # Ponto de entrada
+│   │
+│   ├── Config/                     # Configurações (conexões, credenciais, opções)
+│   │   └── RedisConfig.cs
+│   │
+│   ├── Messaging/                  # Tudo relacionado a Pub/Sub
+│   │   ├── PublisherService.cs
+│   │   └── SubscriberService.cs
+│   │
+│   ├── Cache/                      # Tudo relacionado ao Redis
+│   │   ├── RedisService.cs
+│   │
+│   ├── Models/                     # DTOs, contratos de mensagem
+│   │   └── MessageDto.cs
+│   │
+│   ├── Services/                   # Lógica de negócio
+│   │   └── MessageProcessor.cs
+│   │
+│   ├── Utils/                      # Helpers, extensões
+│   │   └── LoggerHelper.cs
+│   │
+│   └── appsettings.json            # Configurações do projeto (pode incluir Redis, GCP, etc.)
+│
+├── GcpMessagingDemo.Tests/         # Projeto de testes unitários
+│   └── MessagingTests.cs
+│
+└── GcpMessagingDemo.sln            # Solução .NET
